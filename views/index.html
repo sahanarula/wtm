@@ -206,6 +206,7 @@ input{
 		$scope.user = {};
 		$scope.submit = function(event){
 			console.log(event);
+			console.log($(event.target).parent());
 			// $http.post('/register', $scope.user)
 			// .success(function(message){
 			// 	console.log(message);
