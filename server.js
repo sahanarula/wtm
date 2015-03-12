@@ -14,7 +14,7 @@ app.use('/assets', express.static(__dirname + '/assets'));
 app.use('/templates', express.static(__dirname + '/views/templates'));
 app.use(bodyParser());
 
-mongoose.connect("mongodb://localhost:27017/wtm", function(err, connection){
+mongoose.connect("mongodb://sahanarula:helloworld@ds041157.mongolab.com:41157/wtm", function(err, connection){
 	if(err) console.log(err);
 	if(connection) console.log(connection);
 });
