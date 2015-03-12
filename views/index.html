@@ -138,7 +138,7 @@
 	  <input type="radio" value="female" name="gender" required  ng-model="user.gender" >
     </div>
 <ul class="links">
-	<button class="download" ng-disabled="registerForm.$invalid" ng-click="submit()">Submit </button>
+	<button class="download" ng-disabled="registerForm.$invalid" ng-click="submit($event)">Submit </button>
 </ul>
   </form>
 	  <div class="success" ng-show="success" style="color:green;">
@@ -204,7 +204,8 @@ input{
 	<script type="text/javascript">
 	var formController = function($scope, $http){
 		$scope.user = {};
-		$scope.submit = function(){
+		$scope.submit = function(event){
+			$(event.target).parent().innerHTML('Please wait...')
 			$http.post('/register', $scope.user)
 			.success(function(message){
 				console.log(message);
