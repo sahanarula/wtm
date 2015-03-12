@@ -205,16 +205,16 @@ input{
 	var formController = function($scope, $http){
 		$scope.user = {};
 		$scope.submit = function(event){
-			$(event.target).parent().innerHTML('Please wait...')
-			$http.post('/register', $scope.user)
-			.success(function(message){
-				console.log(message);
-				$scope.success = true;
-			})
-			.error(function(err){
-				console.log(err);
-				$scope.error = true;
-			})
+			console.log(event);
+			// $http.post('/register', $scope.user)
+			// .success(function(message){
+			// 	console.log(message);
+			// 	$scope.success = true;
+			// })
+			// .error(function(err){
+			// 	console.log(err);
+			// 	$scope.error = true;
+			// })
 		}
 	}
 	</script>
