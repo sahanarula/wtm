@@ -125,7 +125,7 @@
       <span style="color: red;" ng-show="registerForm.phone.$dirty && registerForm.phone.$invalid">Invalid phone number</span>
     </div>
      <div class="group">      
-      <input type="text" required  ng-model="user.knownlang" name="knownlang">
+      <input type="text" ng-model="user.knownlang" name="knownlang">
       <span class="highlight"></span>
       <span class="bar"></span>
       <label>Known Languages</label>
@@ -206,16 +206,16 @@ input{
 		$scope.user = {};
 		$scope.submit = function(event){
 			console.log(event);
-			$(event.target).parent().html('Please Wait...')
-			// $http.post('/register', $scope.user)
-			// .success(function(message){
-			// 	console.log(message);
-			// 	$scope.success = true;
-			// })
-			// .error(function(err){
-			// 	console.log(err);
-			// 	$scope.error = true;
-			// })
+			$(event.target).parent().html('Please Wait...').css('padding', '10');
+			$http.post('/register', $scope.user)
+			.success(function(message){
+				console.log(message);
+				$scope.success = true;
+			})
+			.error(function(err){
+				console.log(err);
+				$scope.error = true;
+			})
 		}
 	}
 	</script>
