@@ -41,6 +41,6 @@ app.post('/register', function(req, res){
 	});
 })
 
-app.listen(8000, function(){
-	console.log('Listening at 8000');
+app.listen(process.env.PORT || conf.port, function(){
+	console.log('Listening at' + process.env.PORT);
 })
