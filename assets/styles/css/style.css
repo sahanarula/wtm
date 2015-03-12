@@ -23,7 +23,7 @@ h2 small {
 .footer a  { color:#53B2C8; }
 
 /* form starting stylings ------------------------------- */
-.group 			  { 
+.group        { 
   position:relative; 
   margin-bottom:30px; 
 }
@@ -113,4 +113,10 @@ input:focus ~ .highlight {
 @keyframes inputHighlighter {
 	from { background:#5264AE; }
   to 	{ width:0; background:transparent; }
+}
+@media screen and (max-width: 500px) {
+  .group        { 
+    position:relative; 
+    margin-bottom:10px; 
+  }
 }
